@@ -29,9 +29,9 @@ app.MapGet("/pokemon", async (HttpClient httpClient) =>
     pokemonData.UniqueAttacks = pokemonResponse?.Moves.Select(m => m.Move.Name).ToList() ?? new List<string> { "No moves available" };
 
     return Results.Ok(pokemonData);
-});
-//.WithName("GetPikachu")
-//.WithOpenApi();
+})
+.WithName("GetPikachu")
+.WithOpenApi();
 
 app.Run();
 
